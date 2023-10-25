@@ -15,18 +15,19 @@ app.get('/pubg', function (req, res) {
       end: "2025-10-06 04:59:21"
     }
   );
+});
 
-
-  // Defining get request at '/multiple' route 
-  app.get('/', function (req, res) {
-    res.json({
-      message: "Hello World!"
-    });
+// Defining get request at '/' route
+app.get('/', function (req, res) {
+  res.json({
+    message: "Hello World!"
   });
+});
 
 
+// 
+app.listen(3000, function (req, res) {
+  console.log("Server is running at port 3000");
+});
 
-  // Setting the server to listen at port 3000 
-  app.listen(3000, function (req, res) {
-    console.log("Server is running at port 3000");
-  }); })
+
