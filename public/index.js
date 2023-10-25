@@ -1,12 +1,30 @@
-// Simple HTTP server
+// Requiring express in our server 
+const express = require('express'); 
+const app = express(); 
 
-const http = require("http");
+// Defining get request at '/' route 
+app.get('/', function(req, res) { 
+res.json({ 
+  message: 'Hello World',
+  data: {
+    name: 'John Doe',
+    age: 25
+  }
+}); 
+}); 
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello world!!");
-});
+// Defining get request at '/multiple' route 
+app.get('/pubg', function(req, res) { 
+res.json({ 
+	number: 1, 
+	name: 'John', 
+	gender: 'male'
+}); 
+}); 
 
-const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => console.log("Server is running on port 3000"));
+
+// Setting the server to listen at port 3000 
+app.listen(3000, function(req, res) { 
+console.log("Server is running at port 3000"); 
+}); 
