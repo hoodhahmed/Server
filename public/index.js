@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // Defining get request at '/' route 
-app.get('/', function (req, res) {
+app.get('/pubg', function (req, res) {
   res.json(
     {
       status: "true",
@@ -18,11 +18,9 @@ app.get('/', function (req, res) {
 
 
   // Defining get request at '/multiple' route 
-  app.get('/pubg', function (req, res) {
+  app.get('/', function (req, res) {
     res.json({
-      number: 1,
-      name: 'John',
-      gender: 'male'
+      message: "Hello World!"
     });
   });
 
